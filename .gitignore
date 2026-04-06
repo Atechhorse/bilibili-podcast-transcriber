@@ -1,0 +1,47 @@
+# === 敏感配置（含 API Key） ===
+config.yaml
+
+# === 包含实际转写内容的结果文件（版权内容） ===
+funasr_comparison_result.txt
+处理结果报告.md
+
+# === 本地数据（下载内容、转写稿、版权材料） ===
+data/
+src/data/
+
+# === 运行状态 ===
+src/progress.json
+progress.json
+
+# === 日志 ===
+*.log
+logs/
+src/logs/
+
+# === 个人链接列表 ===
+视频链接
+all_xiaoyuzhou.txt
+test_links.txt
+test_5_links.txt
+test_xiaoyuzhou.txt
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo

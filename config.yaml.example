@@ -1,0 +1,33 @@
+# ASR 引擎选择
+asr_engine: "funasr"  # 可选: "whisper" 或 "funasr"
+
+# FunASR 配置（推荐用于中文）
+funasr:
+  device: "auto"  # auto, cpu, cuda, mps
+  enable_speaker_diarization: true  # 启用说话人分离
+  enable_emotion: true  # 启用情感识别
+  enable_itn: true  # 启用文本规整（数字、日期等）
+  max_single_segment_time: 30000  # VAD单段最大时长（毫秒）
+
+# HuggingFace Token (pyannote.audio 需要，Whisper模式使用)
+# 请访问 https://huggingface.co/settings/tokens 获取 token
+# 并同意 pyannote/speaker-diarization-3.1 模型使用协议
+huggingface_token: "YOUR_HUGGINGFACE_TOKEN"
+
+# LLM 配置 (用于说话人身份推理，Whisper模式使用)
+llm:
+  provider: "deepseek"  # 可选: openai, deepseek
+  model: "deepseek-chat"
+  api_key: "YOUR_DEEPSEEK_API_KEY"
+  base_url: "https://api.deepseek.com"
+
+# Whisper 配置（备用方案）
+whisper:
+  model_size: "medium"  # tiny, base, small, medium, large
+  device: "auto"  # auto, cpu, cuda, mps
+
+# 处理参数
+processing:
+  max_retries: 3
+  segment_duration_minutes: 10  # 长音频分段时长
+  segment_threshold_minutes: 30  # 超过此时长触发分段
